@@ -1,6 +1,8 @@
+'''
+using Kivy to create GUI for udpMusic
+'''
 from kivy.config import Config
 Config.set('kivy', 'exit_on_escape', '0')
-
 # Config.set('graphics', 'width', '800')
 # Config.set('graphics', 'height', '600')
 import kivymd.icon_definitions
@@ -61,7 +63,6 @@ class SenderScreen(MDScreen):
         self.refresh_host_ip()  
         self.refresh_encode_mode()
         self.refresh_chunk_size()
-        # self._thread_musicsender = threading.Thread(target=self._musicSender.sendMusic,args=())
         self._thread_musicsender = threading.Thread(target=self._musicSender.sendMusic,args=())
         Clock.schedule_interval(lambda dt: self._running_detect(),1)
 
@@ -84,7 +85,7 @@ class SenderScreen(MDScreen):
         self.dialog = MDDialog(
             # ----------------------------Icon-----------------------------
             # MDDialogIcon(
-            #     icon="refresh",
+            #     icon=" ",
             # ),
             # -----------------------Headline text-------------------------
             MDDialogHeadlineText(
@@ -98,16 +99,13 @@ class SenderScreen(MDScreen):
             MDDialogContentContainer(
                 self._dialog_inputtext_module(tagName,value_old),
                 orientation="vertical",
-                
             ),
-            # DialogContent(),
             # ---------------------Button container------------------------
             MDDialogButtonContainer(
                 Widget(),
                 MDButton(
                     MDButtonText(text="Cancel",id='test1'),
                     style="text",
-                    # on_press=self.close_dateinput_dialog()
                     on_press = lambda _: self.dialog.dismiss() 
                 ),
                 MDButton(
@@ -127,9 +125,6 @@ class SenderScreen(MDScreen):
                     MDTextFieldHintText(
                         text=tagName,
                     ),
-                    # MDTextFieldMaxLengthText(
-                    #     max_text_length=10,
-                    # ),
                     mode="outlined",
                     size_hint_x=None,
                     width="240dp",
@@ -325,7 +320,7 @@ class ReceiverScreen(MDScreen):
         self.dialog = MDDialog(
             # ----------------------------Icon-----------------------------
             # MDDialogIcon(
-            #     icon="refresh",
+            #     icon=" ",
             # ),
             # -----------------------Headline text-------------------------
             MDDialogHeadlineText(
@@ -339,16 +334,13 @@ class ReceiverScreen(MDScreen):
             MDDialogContentContainer(
                 self._dialog_inputtext_module(tagName,value_old),
                 orientation="vertical",
-                
             ),
-            # DialogContent(),
             # ---------------------Button container------------------------
             MDDialogButtonContainer(
                 Widget(),
                 MDButton(
                     MDButtonText(text="Cancel",id='test1'),
                     style="text",
-                    # on_press=self.close_dateinput_dialog()
                     on_press = lambda _: self.dialog.dismiss() 
                 ),
                 MDButton(
@@ -368,9 +360,6 @@ class ReceiverScreen(MDScreen):
                     MDTextFieldHintText(
                         text=tagName,
                     ),
-                    # MDTextFieldMaxLengthText(
-                    #     max_text_length=10,
-                    # ),
                     mode="outlined",
                     size_hint_x=None,
                     width="240dp",
@@ -482,7 +471,6 @@ class UdpMusicApp(MDApp):
         self.sm.add_widget(self.screen2) 
         # sm.current='receiver'   
         return  self.sm
-    
 
     def close_window_callback(self,*args):
         if self.screen1._power_on:

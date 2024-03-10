@@ -1,0 +1,1 @@
+aac encode and decode, dynamic library
