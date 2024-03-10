@@ -1,0 +1,6 @@
+C:\Users\Huimi\Desktop\aac\AccDecode\x64\Release\AccDecode.so
+C:\Users\Huimi\Desktop\aac\AccDecode\x64\Release\AccDecode.vcxproj.CopyComplete
+C:\Users\Huimi\Desktop\aac\AccDecode\x64\Release\faad.dll
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\AccDecode.vcxproj.CopyComplete
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\AccDecode.so
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\faad.dll

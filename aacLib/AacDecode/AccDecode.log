@@ -1,0 +1,15 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Source.cpp
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\Source.cpp(85,12): warning C4244: 'initializing': conversion from 'long' to 'char', possible loss of data
+  (compiling source file '/Source.cpp')
+  
+     Creating library E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\AccDecode.lib and object E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\AccDecode.exp
+  Generating code
+  9 of 10 functions (90.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  AccDecode.vcxproj -> E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AccDecode\x64\Release\AccDecode.so
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。

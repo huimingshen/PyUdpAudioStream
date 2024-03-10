@@ -1,0 +1,6 @@
+C:\Users\Huimi\Desktop\aac\Dll2\x64\Release\Dll2.vcxproj.CopyComplete
+C:\Users\Huimi\Desktop\aac\Dll2\x64\Release\AacEncode.dll
+C:\Users\Huimi\Desktop\aac\Dll2\x64\Release\fdk-aac.dll
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\Dll2.vcxproj.CopyComplete
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\AacEncode.dll
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\fdk-aac.dll

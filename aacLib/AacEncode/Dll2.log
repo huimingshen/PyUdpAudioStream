@@ -1,0 +1,18 @@
+﻿  pch.cpp
+  dllmain.cpp
+  Source.cpp
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\Source.cpp(121,2): warning C4154: deletion of an array expression; conversion to pointer supplied
+  (compiling source file '/Source.cpp')
+  
+E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\Source.cpp(122,2): warning C4154: deletion of an array expression; conversion to pointer supplied
+  (compiling source file '/Source.cpp')
+  
+     Creating library E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\AacEncode.lib and object E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\AacEncode.exp
+  Generating code
+  9 of 10 functions (90.0%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Dll2.vcxproj -> E:\clouddesk\我的文档\兴趣爱好\wifi音响\aac_c_code\AacEncode\x64\Release\AacEncode.dll
+  'pwsh.exe' 不是内部或外部命令，也不是可运行的程序
+  或批处理文件。
