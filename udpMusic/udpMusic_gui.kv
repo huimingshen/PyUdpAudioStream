@@ -1,0 +1,258 @@
+#:kivy 2.3
+#:import get_color_from_hex kivy.utils.get_color_from_hex
+
+
+<SenderScreen>:
+    id: sender_screen
+    md_bg_color: self.theme_cls.backgroundColor
+    # on_touch_down:
+    #     if not search_button.collide_point(*args[1].pos): \
+    #     search_button.fab_state = "expand" \
+    #     if search_button.fab_state == "collapse" else "collapse"
+    
+    
+    MDBoxLayout:
+        # adaptive_height: True
+        # size_hint: 0.1, None
+        width: root.width*0+dp(100.0)
+        orientation: 'vertical'
+        pos_hint: {"x": .2,"y": .4}
+        spacing: '0sp'
+        MDLabel:
+            adaptive_size: True
+            text: "INFO:"
+            # text_color: (0,1,0,1)
+            font_style: "Display"
+            role: "small"
+            padding: 0,'30sp'
+            pos_hint: {"x": 0.03}
+        MDListItem:
+            
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_y: '10sp'
+            on_press: root.set_hostIP_dialog()
+            MDListItemHeadlineText:
+                text: "Host IP"
+            MDListItemSupportingText:
+                id: host_ip
+                text: ""
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            on_press: root.set_encodeMode_dialog()
+            MDListItemHeadlineText:
+                text: "Encode Mode"
+            MDListItemSupportingText:
+                id: encode_mode
+                text: ""
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            on_press: root.set_chunk_dialog()
+            MDListItemHeadlineText:
+                text: "Chunk"
+            MDListItemSupportingText:
+                id: chunk_size
+                text: ""
+
+
+    MDBoxLayout:
+        # adaptive_height: True
+        # size_hint: 0.1, None
+        width: root.width*0+dp(180.0)
+        orientation: 'vertical'
+        pos_hint: {"center_x": .75,"y": .45}
+        spacing: '20sp'
+        MDButton:
+            id: power_button
+            style: "elevated"
+            height: "40sp"
+            pos_hint: {"center_x": .5}
+            width: root.width*0+dp(80.0)
+            theme_bg_color: "Custom"
+            md_bg_color: "brown"
+            on_press: root.powerSwitch()
+            MDButtonIcon:
+                icon: "power"
+                pos_hint: {"center_x": .5, "center_y": .5}
+                theme_icon_color: "Custom"
+                icon_color: "white"
+        MDButton:
+            style: "elevated"
+            height: "40sp"
+            pos_hint: {"center_x": .5}
+            width: root.width*0+dp(80.0)
+            on_release: root.increaseReceiverVolume()
+            MDButtonText:
+                text: "Vol. Up"
+                pos_hint: {"center_x": .5, "center_y": .5}
+        MDButton:
+            style: "elevated"
+            height: "40sp"
+            pos_hint: {"center_x": .5}
+            width: root.width*0+dp(80.0)
+            on_release: root.decreaseReceiverVolume()
+            MDButtonText:
+                text: "Vol. Down"
+                pos_hint: {"center_x": .5, "center_y": .5}
+        
+        # MDButton:
+        #     style: "elevated"
+        #     height: "40sp"
+        #     pos_hint: {"center_x": .5}
+        #     width: root.width*0+dp(80.0)
+        #     on_release: root.closeReceiver()
+        #     MDButtonText:
+        #         text: "  Close\nReceiver"
+        #         pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDButton:
+        id: search_button
+        style: "text"
+        pos_hint: {"center_x": .4, "center_y": .2}
+        on_release: root.receiverSearchMenu()
+        MDButtonIcon:
+            icon: "cloud-search"
+        MDButtonText:
+            text: "Search Receiver"
+
+<ReceiverScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+
+    MDBoxLayout:
+        # adaptive_height: True
+        # size_hint: 0.1, None
+        width: root.width*0+dp(180.0)
+        orientation: 'vertical'
+        pos_hint: {"center_x": .75,"y": .5}
+        spacing: '20sp'
+        # MDButton:
+        #     style: "elevated"
+        #     height: "40sp"
+        #     pos_hint: {"center_x": .5}
+        #     width: root.width*0+dp(80.0)
+        #     on_press: 
+        #     MDButtonText:
+        #         text: "UDP"
+        #         pos_hint: {"center_x": .5, "center_y": .5}
+
+        MDButton:
+            id: DLNAbutton  
+            style: "elevated"
+            height: "40sp"
+            pos_hint: {"center_x": .5}
+            width: root.width*0+dp(80.0)
+            on_release: root.DLNASeviceSwitch()
+            theme_bg_color: "Custom"
+            MDButtonText:
+                text: "DLNA"
+                pos_hint: {"center_x": .5, "center_y": .5}
+
+    MDBoxLayout:
+        # adaptive_height: True
+        # size_hint: 0.1, None
+        width: root.width*0+dp(100.0)
+        orientation: 'vertical'
+        pos_hint: {"x": .2,"y": .3}
+        spacing: '0sp'
+        
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_hint_y: None
+            height: '50sp'
+            on_press: 
+            MDListItemHeadlineText:
+                text: "Encode Mode"
+            MDListItemSupportingText:
+                id: encode_mode
+                text: " "
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_hint_y: None
+            height: '50sp'
+            on_press: root.set_setQueueMaxsizePCM_dialog()
+            MDListItemHeadlineText:
+                text: "Queuemaxsize PCM"
+            MDListItemSupportingText:
+                id: queueMaxsizePCM
+                text: " "
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_hint_y: None
+            height: '50sp'
+            on_press: root.set_set_thresholdPCM_dialog()
+            MDListItemHeadlineText:
+                text: "Start Threshold PCM"
+            MDListItemSupportingText:
+                id: thresholdPCM
+                text: " "
+
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_hint_y: None
+            height: '50sp'
+            on_press: root.set_setQueueMaxsizeAAC_dialog()
+            MDListItemHeadlineText:
+                text: "Queuemaxsize AAC"
+            MDListItemSupportingText:
+                id: queueMaxsizeAAC
+                text: " "
+        MDListItem:
+            pos_hint: {"x": 0, "center_y": .5}
+            size_hint_x: .4
+            size_hint_y: None
+            height: '50sp'
+            on_press: root.set_set_thresholdAAC_dialog()
+            MDListItemHeadlineText:
+                text: "Start Threshold AAC"
+            MDListItemSupportingText:
+                id: thresholdAAC
+                text: " "
+
+    
+    MDLabel:
+        adaptive_size: True
+        text: "Receiver"
+        # text_color: (0,1,0,1)
+        font_style: "Display"
+        role: "small"
+        padding: 0,'30sp'
+        pos_hint: {"center_x": 0.5, "y": 0.8}
+    
+
+
+
+        
+
+<MainScreen>:
+    md_bg_color: self.theme_cls.backgroundColor
+    
+    MDBoxLayout:
+        adaptive_height: True
+        # size_hint: 0.1, None
+        orientation: 'vertical'
+        pos_hint: {"center_y": .5}
+        spacing: '20sp'
+        MDButton:
+            style: "elevated"
+            height: "40sp"
+            pos_hint: {"center_x": .5}
+            width: root.width*0+dp(140.0)
+            on_release: app.open_receiver()
+            MDButtonText:
+                text: "Receiver"
+                pos_hint: {"center_x": .5, "center_y": .5}
+        MDButton:
+            style: "elevated"
+            height: "40sp"
+            width: root.width*0 + dp(140.0)
+            pos_hint: {"center_x": .5}
+            on_release: root.manager.current = 'sender'
+            MDButtonText:
+                text: "Sender"
+                pos_hint: {"center_x": .5, "center_y": .5}
