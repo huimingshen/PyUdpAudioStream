@@ -95,7 +95,7 @@ class MusicSender:
     threadingStopFlag_sendMusic = False #control the loop of sendMusic 
     threadingStopFlag_sendcommand = False #control the loop of sendcommand
     AES_encrypten = AESencrypten()
-    AESKEY = "lovezhuzhu"
+    AESKEY = "encryptenkey"
 
     # initial relative module
     def __init__(self):
@@ -337,7 +337,7 @@ class MusicReceiver:
     AES_encrypten = AESencrypten()
     Player = vlcDLNA.VLCRenderer()
     DLNAserver = vlcDLNA.DLNAService(Player)
-    AES_KEY = "lovezhuzhu" # the key of en/descrpt
+    AES_KEY = "encryptenkey" # the key of en/descrpt
     threadStopFlag_getAudio=False #threading stop flag
     threadStopFlag_musicStream=False
     threadStopFlag_commandCtr=False
